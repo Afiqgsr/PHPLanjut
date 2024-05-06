@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="icon" type="img/png" href="gambar/icon.png" sizes="16x16" />
+    <title>Form Pendaftaran</title>
+    <style>
+        .form-group {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .form-group label {
+            display: inline-block;
+            width: 250px; /* Sesuaikan jika diperlukan */
+            margin-right: 10px;
+            flex-shrink: 0;
+        }
+        #alamat, #alamat_sekolah_asal {
+            width: 60%; 
+            height: 100px;
+        }
+        #no_telp {
+            width: 60%;
+        }
+        #sekolah_asal {
+            width: 30%;
+        }
+        /* Custom CSS untuk menyesuaikan posisi label */
+        .form-group .inline-label {
+            width: 59px;
+        }
+        /* Custom CSS untuk menyesuaikan jarak radio button */
+        input[type="radio"] {
+            margin-right: 5px; /* Sesuaikan jika diperlukan */
+        }
+        .container {
+            margin-left: 10px;
+        }
+        .button2 {
+            margin-left: 22%;
+        }
+    </style>
+</head>
+<body>
+    <form method="POST" action="cookies_proses.php">
+        <div class="form-group">
+            <label for="nim">NIM:</label>
+            <input type="text" id="nim" name="nim">
+        </div>
+        <div class="form-group">
+            <label for="nama">Nama Lengkap:</label>
+            <input type="text" id="nama" name="nama">
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email">
+        </div>
+        <div class="form-group">
+            <label for="tempat">Tempat Tanggal Lahir:</label>
+            <input type="text" id="tempat" name="tempat">
+            <input type="date" id="tanggal_lahir" name="tanggal_lahir" min="2000-01-01" max="2025-12-31" pattern="\d{2}-\d{2}-\d{4}">
+        </div>
+        <div class="form-group">
+            <label for="alamat">Alamat:</label>
+            <textarea id="alamat" name="alamat"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="jenis_kelamin">Jenis Kelamin:</label>
+            <input type="radio" id="laki-laki" name="jenis_kelamin" value="laki-laki">
+            <label class="inline-label" for="laki-laki">Laki-laki</label>
+            <div class="container">
+                <input type="radio" id="perempuan" name="jenis_kelamin" value="perempuan">
+                <label class="inline-label" for="perempuan">Perempuan</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="button2">
+                <button type="submit">Kirim</button>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
